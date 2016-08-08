@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages", "VKMessages.csproj", "{15F17493-77E9-4E2F-AA1A-9D8FEFF3FBA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages.Data", "VKMessages.Data\VKMessages.Data.csproj", "{AE36E94E-C04E-4731-BE68-9A0C0EA71EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages.Core", "VKMessages.Core\VKMessages.Core.csproj", "{AF54430A-CC49-4702-A3E8-36B2E945E143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{15F17493-77E9-4E2F-AA1A-9D8FEFF3FBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F17493-77E9-4E2F-AA1A-9D8FEFF3FBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F17493-77E9-4E2F-AA1A-9D8FEFF3FBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE36E94E-C04E-4731-BE68-9A0C0EA71EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE36E94E-C04E-4731-BE68-9A0C0EA71EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE36E94E-C04E-4731-BE68-9A0C0EA71EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE36E94E-C04E-4731-BE68-9A0C0EA71EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

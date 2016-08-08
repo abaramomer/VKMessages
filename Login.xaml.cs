@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
+using VKMessages.Core.Requests;
 
 
 namespace VKMessages
@@ -14,7 +15,7 @@ namespace VKMessages
         public Login()
         {
             InitializeComponent();
-            Browser.Url = new Uri("https://oauth.vk.com/authorize?client_id=5578183&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=messages&response_type=token&v=5.53&state=123456");
+            Browser.Url = new Uri(new LoginRequest("messages").GetUrl());
             Browser.Navigated += BrowserOnNavigated;
         }
 

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VKMessages.Core.Requests;
 
 namespace VKMessages
 {
@@ -40,19 +41,9 @@ namespace VKMessages
 
         private void SendRequest()
         {
-            var url = string.Format(@"https://api.vk.com/method/messages.getDialogs?access_token={0}",
-                App.Current.Properties["AccessToken"]);
-            var request = HttpWebRequest.CreateHttp(url);
+            var dialogRequest = new DialogListRequest {AccessToken = App.Current.Properties["AccessToken"].ToString()};
 
-            var response = (HttpWebResponse) request.GetResponse();
-            
-            using (var stream = response.GetResponseStream())
-            {
-                using (var reader = new StreamReader(stream))
-                {
-                    MessagesList.Text = reader.ReadToEnd();
-                }
-            }
+            MessagesList.Text = HttpRequester.GetResponse(dialogRequest);
         }
     }
 }
