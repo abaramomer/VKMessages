@@ -9,5 +9,10 @@
                 return "messages.getDialogs"; 
             }
         }
+
+        public DialogListRequest(int count = 10)
+        {
+            Params.Add("count", count.ToString());
+        }
     }
 }

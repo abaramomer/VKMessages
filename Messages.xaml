@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Messages" Height="300" Width="300">
     <Grid>
-        <TextBlock Name="MessagesList" Width="300" TextWrapping="Wrap"></TextBlock>
+        <TextBox Name="MessagesList" Width="300" TextWrapping="Wrap"></TextBox>
     </Grid>
 </Window>

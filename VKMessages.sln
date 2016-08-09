@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages.Data", "VKMessag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages.Core", "VKMessages.Core\VKMessages.Core.csproj", "{AF54430A-CC49-4702-A3E8-36B2E945E143}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessages.Tests", "VKMessages.Tests\VKMessages.Tests.csproj", "{2AB54E3C-2BA1-4A89-B5F6-5F186ABF8226}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF54430A-CC49-4702-A3E8-36B2E945E143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB54E3C-2BA1-4A89-B5F6-5F186ABF8226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB54E3C-2BA1-4A89-B5F6-5F186ABF8226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB54E3C-2BA1-4A89-B5F6-5F186ABF8226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB54E3C-2BA1-4A89-B5F6-5F186ABF8226}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
