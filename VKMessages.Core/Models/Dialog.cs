@@ -2,22 +2,22 @@
 {
     public class Dialog : ResponseModel
     {
-        [ResponcePropertyName("mid")]
+        [ResponseProperty("mid")]
         public string MessageId { get; set; }
 
-        [ResponcePropertyName("uid")]
+        [ResponseProperty("uid")]
         public string DialogId { get; set; }
 
-        [ResponcePropertyName("read_state")]
+        [ResponseProperty("read_state")]
         public bool IsReaded { get; set; }
 
-        [ResponcePropertyName("out")]
-        public string IsMy { get; set; }
+        [ResponseProperty("out")]
+        public bool IsMy { get; set; }
 
-        [ResponcePropertyName("date")]
+        [ResponseProperty("date")]
         public string Date { get; set; }
 
-        [ResponcePropertyName("body")]
+        [ResponseProperty("body")]
         public string Text { get; set; }
     }
 }

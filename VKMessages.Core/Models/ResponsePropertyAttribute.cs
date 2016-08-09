@@ -3,11 +3,12 @@
 namespace VKMessages.Core.Models
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class ResponcePropertyNameAttribute : Attribute
+    public class ResponsePropertyAttribute : Attribute
     {
         public string Name { get; private set; }
 
-        public ResponcePropertyNameAttribute(string name)
+
+        public ResponsePropertyAttribute(string name)
         {
             Name = name;
         }
