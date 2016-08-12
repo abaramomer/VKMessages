@@ -3,6 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Messages" Height="300" Width="300">
     <Grid>
-        <TextBox Name="MessagesList" Width="300" TextWrapping="Wrap"></TextBox>
+        <ItemsControl>
+            <ScrollViewer>
+                <ItemsControl Name="Dialogss" ItemsSource="{Binding Path = Dialogs}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Template="{StaticResource DialogItemTemplate}"></Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </ItemsControl>
     </Grid>
 </Window>

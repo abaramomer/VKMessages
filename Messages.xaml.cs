@@ -13,37 +13,54 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VKMessages.Core;
+using VKMessages.Core.Models;
 using VKMessages.Core.Requests;
+using VKMessages.ViewModels;
+using VKMessages.ViewModels.PageViewModels;
 
 namespace VKMessages
 {
     /// <summary>
     /// Interaction logic for Messages.xaml
     /// </summary>
-    public partial class Messages : Window
+    public partial class Messages : Window, IApplicationPage<DialogListPageViewModel>
     {
         private string accessToken;
+
+        public DialogListPageViewModel PageViewModel { get; set; }
 
         public Messages()
         {
             InitializeComponent();
+            PageViewModel = new DialogListPageViewModel();
 
             if (App.Current.Properties["AccessToken"] != null)
             {
                 SendRequest();
             }
 
-            else
-            {
-                MessagesList.Text = "Please, login";
-            }
+            Bind(PageViewModel);
         }
 
         private void SendRequest()
         {
             var dialogRequest = new DialogListRequest {AccessToken = App.Current.Properties["AccessToken"].ToString()};
 
-            MessagesList.Text = HttpRequester.GetResponse(dialogRequest);
+            var response = HttpRequester.GetResponse(dialogRequest);
+
+            var dialogs = new ResponseDeserializer().DeserializeMany<Dialog>(response);
+
+            foreach (var dialog in dialogs)
+            {
+                var viewModel = new DialogViewModel(dialog);
+                PageViewModel.Dialogs.Add(viewModel);
+            }
+        }
+
+        public void Bind(DialogListPageViewModel viewModel)
+        {
+            DataContext = viewModel;
         }
     }
 }

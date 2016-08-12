@@ -23,12 +23,12 @@
 
         public LoginRequest(string scope)
         {
-            Params.Add("client_id", AppId);
-            Params.Add("redirect_uri", LoginRedirectPage);
-            Params.Add("scope", scope);
-            Params.Add("response_type", ResponseType);
-            Params.Add("state", State);
-            Params.Add("display", Display);
+            SetParam("client_id", AppId);
+            SetParam("redirect_uri", LoginRedirectPage);
+            SetParam("scope", scope);
+            SetParam("response_type", ResponseType);
+            SetParam("state", State);
+            SetParam("display", Display);
         }
     }
 }

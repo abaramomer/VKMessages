@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
+using VKMessages.Core;
 using VKMessages.Core.Requests;
 
 
@@ -12,9 +13,12 @@ namespace VKMessages
     /// </summary>
     public partial class Login : Window
     {
+        private readonly AccesTokenProccessor proccessor;
         public Login()
         {
             InitializeComponent();
+            
+            proccessor = new AccesTokenProccessor();
             Browser.Url = new Uri(new LoginRequest("messages").GetUrl());
             Browser.Navigated += BrowserOnNavigated;
         }
@@ -22,13 +26,10 @@ namespace VKMessages
         private void BrowserOnNavigated(object sender, WebBrowserNavigatedEventArgs webBrowserNavigatedEventArgs)
         {
             var url = Browser.Url.AbsoluteUri;
+            var token = proccessor.SaveFromUrl(url);
 
-            var accessToken = Regex.Match(url, @"access_token=.*&expires_in").Value
-                .Replace("access_token=", "")
-                .Replace("&expires_in", "");
-            AccessToken.Text = accessToken;
-
-            App.Current.Properties["AccessToken"] = accessToken;
+            AccessToken.Text = token;
+            App.Current.Properties["AccessToken"] = token;
         }
     }
 }

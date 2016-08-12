@@ -19,11 +19,11 @@ namespace VKMessages.Tests
         {
             deserializer = new ResponseDeserializer();
 
-            var result = deserializer.Deserialize<Dialog>(messagesInJson);
+            var result = deserializer.DeserializeMany<Dialog>(messagesInJson);
 
-            result.First().IsMy.Should().Be(true);
+            result.First().IsNotMy.Should().Be(true);
             result.Last().Text.Should().Be("haha");
-            result[1].DialogId.Should().Be("2175497");
+            result[1].DialogId.Should().Be("21754971");
         }
     }
 }

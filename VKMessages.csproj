@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IApplicationPage.cs" />
+    <Compile Include="ViewModels\PageViewModels\BasePageViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModel.cs" />
+    <Compile Include="ViewModels\PageViewModels\DialogListPageViewModel.cs" />
+    <Compile Include="ViewModels\ResponseSpecificViewModel.cs" />
+    <Page Include="Templates\DialogTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

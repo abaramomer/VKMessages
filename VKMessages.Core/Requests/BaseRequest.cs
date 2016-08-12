@@ -27,5 +27,10 @@ namespace VKMessages.Core.Requests
 
             return url.ToString().TrimEnd('&');
         }
+
+        protected void SetParam(string key, object value)
+        {
+            Params.Add(key, value.ToString());
+        } 
     }
 }

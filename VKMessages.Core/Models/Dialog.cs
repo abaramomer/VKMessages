@@ -12,7 +12,7 @@
         public bool IsReaded { get; set; }
 
         [ResponseProperty("out")]
-        public bool IsMy { get; set; }
+        public bool IsNotMy { get; set; }
 
         [ResponseProperty("date")]
         public string Date { get; set; }

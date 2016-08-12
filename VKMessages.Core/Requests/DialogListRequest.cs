@@ -12,7 +12,7 @@
 
         public DialogListRequest(int count = 10)
         {
-            Params.Add("count", count.ToString());
+            SetParam("count", count);
         }
     }
 }
