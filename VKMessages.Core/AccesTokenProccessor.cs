@@ -1,11 +1,18 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using VKMessages.Data;
 
 namespace VKMessages.Core
 {
     public class AccesTokenProccessor
     {
         private const string AccesTokeParamName = "access_token";
+        private AccessTokenProvider provider;
+
+        public AccesTokenProccessor()
+        {
+            provider = new AccessTokenProvider();
+        }
+
         public string SaveFromUrl(string url)
         {
             var pattern = string.Format("#{0}=([A-z0-9]*)", AccesTokeParamName);
@@ -23,6 +30,7 @@ namespace VKMessages.Core
 
         public void Save(string token)
         {
+            provider.Save(token);   
         }
     }
 }

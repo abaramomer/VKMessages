@@ -1,7 +1,16 @@
-﻿namespace VKMessages.Core.Requests
+﻿using VKMessages.Data;
+
+namespace VKMessages.Core.Requests
 {
     public abstract class NonAuthApiRequest : BaseRequest
     {
+        private AccessTokenProvider provider;
+
+        protected NonAuthApiRequest()
+        {
+            provider = new AccessTokenProvider();
+        }
+
         public string AccessToken { get; set; }
 
         public override string ApiUrl
@@ -14,13 +23,14 @@
 
         public override string GetUrl()
         {
-            Params.Add("access_token", AccessToken);
+            SetParam("access_token", GetAccessToken());
+
             return base.GetUrl();
         }
 
         private string GetAccessToken()
         {
-            return "123";
+            return provider.GetAccessToken();
         }
     }
 }

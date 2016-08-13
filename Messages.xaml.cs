@@ -34,18 +34,14 @@ namespace VKMessages
         {
             InitializeComponent();
             PageViewModel = new DialogListPageViewModel();
-
-            if (App.Current.Properties["AccessToken"] != null)
-            {
-                SendRequest();
-            }
-
+            
+            SendRequest();
             Bind(PageViewModel);
         }
 
         private void SendRequest()
         {
-            var dialogRequest = new DialogListRequest {AccessToken = App.Current.Properties["AccessToken"].ToString()};
+            var dialogRequest = new DialogListRequest();
 
             var response = HttpRequester.GetResponse(dialogRequest);
 

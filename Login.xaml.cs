@@ -29,7 +29,6 @@ namespace VKMessages
             var token = proccessor.SaveFromUrl(url);
 
             AccessToken.Text = token;
-            App.Current.Properties["AccessToken"] = token;
         }
     }
 }
